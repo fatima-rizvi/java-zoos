@@ -14,10 +14,10 @@ public interface AnimalRepository
         extends CrudRepository<Animal, Long>
 {
 
-    @Query(value = "SELECT a.animaltype, a.animalid, count(z.zooid) as countzoos" +
-                    "FROM animals a RIGHT JOIN zooanimals zooanimals a" +
-                    "ON a.animalid = z.animalid" +
-                    "GROUP BY a.animaltype" +
-                    "ORDER BY a.animaltype", nativeQuery = true)
+    @Query(value = "SELECT a.animalid, a.animaltype, count(z.zooid) as countzoos" +
+                    " FROM animals a RIGHT JOIN zooanimals z" +
+                    " ON a.animalid = z.animalid" +
+                    " GROUP BY a.animalid, a.animaltype" +
+                    " ORDER BY a.animaltype", nativeQuery = true)
     ArrayList<AnimalCount> animalCount();
 }

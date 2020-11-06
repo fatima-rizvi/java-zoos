@@ -81,19 +81,19 @@ public class Zoo
         this.zooname = zooname;
     }
 
-    public Set<ZooAnimals> getAnimals() {
-        return animals;
-    }
-
-    public void setAnimals(Set<ZooAnimals> animals) {
-        this.animals = animals;
-    }
-
     public List<Telephone> getTelephones() {
         return telephones;
     }
 
     public void setTelephones(List<Telephone> telephones) {
         this.telephones = telephones;
+    }
+
+    public Set<ZooAnimals> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Set<ZooAnimals> animals) {
+        this.animals = animals;
     }
 }

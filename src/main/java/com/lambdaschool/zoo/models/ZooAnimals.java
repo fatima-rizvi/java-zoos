@@ -47,6 +47,10 @@ public class ZooAnimals
     @JsonIgnoreProperties(value = "zoos", allowSetters = true)
     private Animal animal;
 
+    //String incomingzoo
+    private String incomingzoo;
+
+
     /**
      * Default constructor used primarily by the JPA.
      */
@@ -62,10 +66,12 @@ public class ZooAnimals
      */
     public ZooAnimals(
             Zoo zoo,
-            Animal animal)
+            Animal animal,
+            String incomingzoo)
     {
         this.zoo = zoo;
         this.animal = animal;
+        this.incomingzoo = incomingzoo;
     }
 
     /**
@@ -103,9 +109,17 @@ public class ZooAnimals
      *
      * //@param role change role object associated with this user role combination to this one.
      */
-    public void setRole(Animal animal)
+    public void setAnimal(Animal animal)
     {
         this.animal = animal;
+    }
+
+    public String getIncomingzoo() {
+        return incomingzoo;
+    }
+
+    public void setIncomingzoo(String incomingzoo) {
+        this.incomingzoo = incomingzoo;
     }
 
     @Override
